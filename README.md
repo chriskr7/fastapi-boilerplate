@@ -1,11 +1,9 @@
 # fastapi-boilerplate
 
-FastAPI Boilerplate
-
 ----
 
 This is FastAPI Boilerplate where to start when you start new
-API or WS Projects. It is highly recommended to see
+API or WS Projects for practical uses. It is highly recommended to see
 [FastAPI Tutorial](https://fastapi.tiangolo.com/tutorial/) before starting
 project with this boilerplate.
 
