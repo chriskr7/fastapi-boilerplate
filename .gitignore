@@ -1,0 +1,49 @@
+__pycache__
+
+*.log
+*.csv
+*.py[cod]
+*.pem
+# *.ini
+*.swo
+dump.rdb
+tags
+.vscode/
+migrations/
+log/
+logs/
+.auto/
+.vim/
+.python-version
+
+# Celery
+celerybeat-schedule
+
+# C extensions
+*.so
+*.a
+
+# Mac Specific
+.DS_Store
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# NodeJS
+bower_components/
+node_modules/
+
+# PyCharm
+.idea
+
+# Sublime
+.codeintel
+*.sublime-*
+
+# vim
+.*.swp
+
+# sandbox
+sandbox/
