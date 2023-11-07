@@ -1,4 +1,5 @@
 import tomllib
+
 from typing import Any
 
 from core.patterns import Singleton
