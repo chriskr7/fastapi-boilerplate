@@ -1,0 +1,30 @@
+[logger]
+[logger.access]
+level = "debug"
+path = "./logs"
+filename = "access.log"
+
+[logger.application]
+level = "debug"
+path = "./logs"
+filename = "application.log"
+
+[logger.general]
+level = "debug"
+path = "./logs"
+filename = "general.log"
+
+[logger.mysql]
+level = "debug"
+path = "./logs"
+filename = "mysql.log"
+
+[database]
+[database.mysql]
+host = "localhost"
+port = 3306
+user = "chris"
+password = "rewriteinrust"
+db_name = "test"
+pool_size = 10
+pool_recycle = 1024

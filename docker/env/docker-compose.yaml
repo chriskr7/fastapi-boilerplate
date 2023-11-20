@@ -1,0 +1,42 @@
+version: "3.7"
+services:
+  mysql:
+    image: mysql:latest
+    platform: linux/amd64
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "chris"
+      MYSQL_PASSWORD: "rewriteinrust"
+      MYSQL_ROOT_PASSWORD: "rewriteinrust"
+    ports:
+      - "3306:3306"
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - "~/work/docker/volume/mysql:/var/lib/mysql"
+    networks:
+      networkapi:
+        ipv4_address: 172.23.10.10
+
+  redis:
+    container_name: redis ## 7.0.4
+    image: redis/redis-stack-server:latest
+    ports:
+      - 6379:6379
+    restart: always
+    networks:
+      networkapi:
+        ipv4_address: 172.23.10.14
+
+networks:
+  networkapi:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.23.10.0/24
+          gateway: 172.23.10.1
