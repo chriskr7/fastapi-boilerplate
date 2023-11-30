@@ -32,6 +32,21 @@ services:
       networkapi:
         ipv4_address: 172.23.10.14
 
+  mongodb:
+    container_name: mongodb ##5.0.11
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      - ~/work/docker/volume/mongodb:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=chris
+      - MONGO_INITDB_ROOT_PASSWORD=rewriteinrust
+    networks:
+      networkapi:
+        ipv4_address: 172.23.10.12
+
 networks:
   networkapi:
     driver: bridge
