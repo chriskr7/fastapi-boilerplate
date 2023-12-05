@@ -1,0 +1,53 @@
+[logger.access]
+level = "debug"
+path = "./logs"
+filename = "access.log"
+
+[logger.application]
+level = "debug"
+path = "./logs"
+filename = "application.log"
+
+[logger.general]
+level = "debug"
+path = "./logs"
+filename = "general.log"
+
+[logger.mysql]
+level = "debug"
+path = "./logs"
+filename = "mysql.log"
+
+[logger.redis]
+level = "debug"
+path = "./logs"
+filename = "redis.log"
+
+[logger.mongo]
+level = "debug"
+path = "./logs"
+filename = "mongo.log"
+
+[database.mysql]
+host = "localhost"
+port = 3306
+user = "chris"
+password = "rewriteinrust"
+db_name = "test"
+pool_size = 10
+pool_recycle = 1024
+echo = true
+
+[database.redis]
+host = "localhost"
+port = 6379
+decode_responses = false
+max_connections = 20
+
+[database.mongo]
+host = "localhost"
+port = 27017
+user = "chris"
+password = "rewriteinrust"
+auth_source = ""
+auth_mechanism = "DEFAULT"
