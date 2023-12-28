@@ -2,7 +2,7 @@ import pytest
 
 from core.config import AppConfig
 from core.enum.session_status import SessionStatus
-from core.session import Session, SessionManager
+from core.session import SessionManager
 
 
 @pytest.mark.asyncio
@@ -11,10 +11,10 @@ async def test_session():
     _config = AppConfig().load_config("./test-config.toml")
 
     session_manager = SessionManager()
-    session: Session = await session_manager.create("hwanee")
+    access_token: str = await session_manager.create_access_token(user_id="hwanee")
 
-    got_session = await session_manager.verify_access_token(session.access_token)
-    assert session == got_session
+    user_id = await session_manager.get_current_user(access_token)
+    assert "hwanee" == user_id
 
-    wrong_session = await session_manager.verify_access_token("testifinthere")
+    wrong_session = await session_manager.get_current_user("testifinthere")
     assert wrong_session == SessionStatus.NOT_EXIST

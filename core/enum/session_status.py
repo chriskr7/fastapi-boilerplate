@@ -6,3 +6,4 @@ class SessionStatus(Enum):
     NORMAL = 0
     NOT_EXIST = auto()
     EXPIRED = auto()
+    NOT_VALID = auto()
