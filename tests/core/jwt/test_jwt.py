@@ -8,10 +8,10 @@ def test_jwt():
     _config = AppConfig().load_config("./test-config.toml")
 
     jwt_manager = JWTManager()
-    access_token: str = jwt_manager.create_access_token(user_id="hwanee")
+    access_token: str = jwt_manager.create_access_token(sub="hwanee")
 
     user_id = jwt_manager.get_current_user(access_token)
     assert "hwanee" == user_id
 
     wrong_token = jwt_manager.get_current_user("testifinthere")
-    assert wrong_token == SessionStatus.NOT_EXIST
+    assert wrong_token == SessionStatus.NOT_VALID

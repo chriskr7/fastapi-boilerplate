@@ -11,7 +11,7 @@ async def test_session():
     _config = AppConfig().load_config("./test-config.toml")
 
     session_manager = SessionManager()
-    access_token: str = await session_manager.create_access_token(user_id="hwanee")
+    access_token: str = await session_manager.create_access_token(sub="hwanee")
 
     user_id = await session_manager.get_current_user(access_token)
     assert "hwanee" == user_id
