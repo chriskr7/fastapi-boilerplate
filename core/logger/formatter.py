@@ -27,7 +27,7 @@ class LogFormatter(logging.Formatter):
         logging.ERROR: 1,  # Red
     }
 
-    converter: Callable[..., dt.datetime] = dt.datetime.fromtimestamp
+    dt_converter: Callable[..., dt.datetime] = dt.datetime.fromtimestamp
 
     def __init__(
         self,
@@ -61,7 +61,7 @@ class LogFormatter(logging.Formatter):
         return color
 
     def formatTime(self, record, datefmt=None) -> str:
-        ct = self.converter(record.created)
+        ct = self.dt_converter(record.created)
         if datefmt:
             return ct.strftime(datefmt)
         else:
